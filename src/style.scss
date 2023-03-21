@@ -1,0 +1,16 @@
+@import "variables";
+
+body{
+    background-color: $base-color;
+}
+
+.title{
+    color: rgb(64, 134, 150);
+    display: flex;
+    justify-content: center;
+}
+
+.p{
+    color: $p-color;
+    font-weight: bold;
+}

@@ -1,0 +1,26 @@
+{
+  "name": "googlebooks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "watch": "webpack --watch"
+  },
+  "author": "hellwail",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^6.7.3",
+    "mini-css-extract-plugin": "^2.7.5",
+    "style-loader": "^3.3.2",
+    "webpack": "^5.76.2",
+    "webpack-cli": "^5.0.1",
+    "webpack-watch": "^0.2.0"
+  },
+  "dependencies": {
+    "node-sass": "^8.0.0",
+    "sass-loader": "^13.2.1"
+  }
+}
