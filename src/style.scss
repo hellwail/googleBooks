@@ -2,15 +2,64 @@
 
 body{
     background-color: $base-color;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    height: 32323px;
 }
 
-.title{
-    color: rgb(64, 134, 150);
+.header{
+    position: sticky;
+    top: 0;
+    height: 116px;
+    
+}
+
+.header-container{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 990px;
+    
 }
 
-.p{
-    color: $p-color;
-    font-weight: bold;
+.header-logo_p{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
 }
+
+.header-navigation{
+    list-style: none;
+    text-transform: uppercase;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-navigation-link{
+    margin-right: 40px;
+    font-size: 10px;
+    line-height: 12px;
+}
+
+.header-navigation-link a{
+    text-decoration: none;
+    color: $p-color;
+    font-weight: 700;
+}
+
+.header-navigation-link a:hover{
+    color: black;
+}
+
+.header-icons a{
+    margin-right: 40px;
+    width: 12px;
+    height: 6px;
+}
+
+
+
+
+
