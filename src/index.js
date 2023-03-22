@@ -40,8 +40,6 @@ dotsArea.onclick = function (e) {
     }
 }
 
-let timer;
-
-function autoSlider(){
-    timer = setTimeout();
-}
+setInterval(function() {
+    plusSlides(1);
+}, 5000);

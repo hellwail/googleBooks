@@ -23,7 +23,12 @@ body{
     max-width: 1120px;
 }
 
-.header-logo_p{
+.header-logo__link{
+    text-decoration: none;
+    color: #000;
+}
+
+.header-logo__p{
     font-weight: 700;
     font-size: 24px;
     line-height: 29px;
@@ -50,7 +55,7 @@ body{
 }
 
 .header-navigation__link a:hover{
-    color: black;
+    color: #000;
 }
 
 .header-icons a{
@@ -114,5 +119,3 @@ body{
 .active{
     background: #9E98DC;
 }
-
-
