@@ -3,8 +3,9 @@
 body{
     background-color: $base-color;
     font-family: 'Montserrat', sans-serif;
-    margin: 0;
+    margin: 0 auto;
     height: 32323px;
+    max-width: 1440px;
 }
 
 .header{
@@ -118,4 +119,45 @@ body{
 
 .active{
     background: #9E98DC;
+}
+
+.book-genres{
+    background-color: $dot-color;
+    width: 416px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    margin-top: 105px;
+    
+}
+
+.book-genres__list{
+    padding-inline-start: 10px;
+}
+
+.book-genres__link{
+    list-style: none;
+    cursor: pointer;
+    color: $p-color;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 45px
+    
+}
+
+.products{
+    background-color: gray;
+    display: flex;
+    width: 915px;
+    height: 300px;
+    margin-top: 130px;
+    z-index: 1;
+    position: relative;
+    right: 50px;
+   
+}
+
+.bok{
+    display: flex;
+    
 }

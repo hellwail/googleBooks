@@ -1,4 +1,5 @@
 import './style.scss';
+import{} from './getBooks.js';
 
 let dots = document.getElementsByClassName('slider-dot'),
     dotsArea = document.getElementsByClassName('slider-dots__container')[0],
@@ -43,3 +44,4 @@ dotsArea.onclick = function (e) {
 setInterval(function() {
     plusSlides(1);
 }, 5000);
+
