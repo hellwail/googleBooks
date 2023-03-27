@@ -142,11 +142,13 @@ body{
     font-weight: 500;
     font-size: 12px;
     line-height: 45px
-    
 }
 
-.products{
-    background-color: gray;
+.book-genres__link:hover{
+    color: #000;
+}
+
+.products-container{
     display: flex;
     width: 915px;
     height: 300px;
@@ -154,10 +156,71 @@ body{
     z-index: 1;
     position: relative;
     right: 50px;
-   
+    flex-wrap: wrap;
 }
 
 .bok{
     display: flex;
     
+}
+
+.product-item{
+    display: flex;
+    align-items: center;
+    width: 450px;
+    margin-bottom: 60px;
+}
+
+.product-img{
+    margin-right: 20px;
+}
+
+.product-decription{
+    flex-grow: 1;
+}
+
+.book-img{
+    width: 212px;
+    height: 330px;
+}
+
+.img-description{
+    color: $p-color;
+    font-size: 10px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 14px;
+}
+
+.books-title{
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.price{
+    font-weight: bold;
+    font-size: 13px;
+    color: #000;
+}
+
+.product-btn{
+    width: 170px;
+    height: 45px;
+    border: 1px solid #4C3DB2;
+    color: #4C3DB2;
+    background-color: #fff;
+    font-family: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.load-btn__container{
+    width: 1120px;
+    margin-left: 350px;
+    
+}
+
+.load-btn{
+    margin: 0 auto;
 }
