@@ -12,8 +12,6 @@ getBooks();
 
 
 
-
-
   
 
 // Bestsellers `https://www.googleapis.com/books/v1/volumes?q="subject:Bestsellers"&key=${apiKey}&printType=books&startIndex=0&maxResults=6&langRestrict=en`

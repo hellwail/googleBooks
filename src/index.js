@@ -1,5 +1,5 @@
 import './style.scss';
-import{} from './getBooks.js';
+//import{getBooks} from './getBooks.js';
 
 let dots = document.getElementsByClassName('slider-dot'),
     dotsArea = document.getElementsByClassName('slider-dots__container')[0],
@@ -45,3 +45,4 @@ setInterval(function() {
     plusSlides(1);
 }, 5000);
 
+getBooks();
