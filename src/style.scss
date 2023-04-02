@@ -72,11 +72,14 @@ body{
     margin: 0; 
 }
 
-.slider-dots__container{
+.slider-dots{
     display: flex;
     justify-content: space-around;
     margin: 17px auto 0px;
     width: 56px;
+    &__list{
+        list-style: none;
+    }
 }
 
 .slider-dot{
@@ -101,10 +104,6 @@ body{
     top: 350px;
     z-index: 1;
     display: flex;
-}
-
-.slider-dots__list{
-    list-style: none;
 }
 
 .active{
@@ -185,6 +184,7 @@ body{
     font-weight: bold;
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
+    line-height: 16px;
 }
 
 .price{
@@ -206,11 +206,17 @@ body{
     text-transform: uppercase;
 }
 
-
-.btn-cont{
+.load-btn__container{
     display: flex;
     justify-content: center;
     margin-bottom: 50px;
     margin-left: 90px;
 }
 
+.truncate-3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }

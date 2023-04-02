@@ -1,16 +1,38 @@
-const apiKey = "";
+const apiKey = "AIzaSyD5olFns5h9FLIMdSEF5iZDIkDVxAEjz4I";
+const output = document.querySelector(".products-container");
 
+const genre = document.querySelectorAll(".book-genres__link");
+genre.forEach(item =>{
+    item.addEventListener('click', getBooks);
+})
 
 function getBooks(){
-    fetch(`https://www.googleapis.com/books/v1/volumes?q="subject:Film&TV&Drama"&key=${apiKey}&printType=books&startIndex=0&maxResults=6&langRestrict=en`)
-    .then(data => data.json())
-    .then(data => {
-        console.log(data);
+    fetch(`https://www.googleapis.com/books/v1/volumes?q="subject:military"&key=${apiKey}&printType=books&startIndex=0&maxResults=6&langRestrict=en`)
+    .then(response => {
+        return response.json()
+    })
+    .then (data => {
+        data.items.forEach (book => {
+            const bookTemplate = `
+            <div class="product-item">
+            <div class="product-img">
+            <img src = ${book.volumeInfo.imageLinks.thumbnail} class = "book-img" alt="book cover">
+            </div>
+            <div class ="product-decription">
+            <p class="img-description author">${book.volumeInfo.authors}</p>
+            <p class="img-description books-title">${book.volumeInfo.title}</p>
+            <p class="img-description about-book truncate-3">${book.volumeInfo.description}</p>
+            <p class="img-description price">${book.volumeInfo.price}</p>
+            <button class="product-btn">Buy now</button>
+            </div>
+            `;
+            output.innerHTML += bookTemplate;
+        })
     })
 }
-getBooks();
 
 
+export {getBooks};
 
   
 

@@ -1,8 +1,8 @@
 import './style.scss';
-//import{getBooks} from './getBooks.js';
+import{getBooks} from './getBooks.js';
 
 let dots = document.getElementsByClassName('slider-dot'),
-    dotsArea = document.getElementsByClassName('slider-dots__container')[0],
+    dotsArea = document.getElementsByClassName('slider-dots')[0],
     slides = document.getElementsByClassName('banner'),
     slideIndex = 1;
 
