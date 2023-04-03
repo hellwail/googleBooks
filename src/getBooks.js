@@ -1,22 +1,25 @@
 const apiKey = "AIzaSyD5olFns5h9FLIMdSEF5iZDIkDVxAEjz4I";
 const output = document.querySelector(".products-container");
-
+const load = document.querySelector(".load-btn");
 const genre = document.querySelectorAll(".book-genres__link");
+
 genre.forEach(item =>{
     item.addEventListener('click', getBooks);
 })
 
-function getBooks(){
-    fetch(`https://www.googleapis.com/books/v1/volumes?q="subject:military"&key=${apiKey}&printType=books&startIndex=0&maxResults=6&langRestrict=en`)
+
+function getBooks(event){
+    fetch(`https://www.googleapis.com/books/v1/volumes?q="subject:${event.target.innerText}"&key=${apiKey}&printType=books&startIndex=0&maxResults=6&langRestrict=en`)
     .then(response => {
         return response.json()
     })
     .then (data => {
+        output.innerHTML = ''
         data.items.forEach (book => {
             const bookTemplate = `
             <div class="product-item">
             <div class="product-img">
-            <img src = ${book.volumeInfo.imageLinks.thumbnail} class = "book-img" alt="book cover">
+            <img src = ${book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "img/2.png"} class = "book-img" alt="book">
             </div>
             <div class ="product-decription">
             <p class="img-description author">${book.volumeInfo.authors}</p>
@@ -31,6 +34,7 @@ function getBooks(){
     })
 }
 
+load.addEventListener('click', getBooks);
 
 export {getBooks};
 
