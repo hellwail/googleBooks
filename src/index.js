@@ -4,7 +4,7 @@ import{getBooks} from './getBooks.js';
 
 let dots = document.getElementsByClassName('slider-dot'),
     dotsArea = document.getElementsByClassName('slider-dots')[0],
-    slides = document.getElementsByClassName('banner'),
+    slides = document.getElementsByClassName('slider'),
     slideIndex = 1;
 
 showSlides(slideIndex);
@@ -19,10 +19,10 @@ function showSlides(n) {
         slides[i].style.display = 'none';
     }
     for (let i = 0; i < dots.length; i++) {
-        dots[i].classList.remove('active');
+        dots[i].classList.remove('slider-dot__active');
     }
     slides[slideIndex - 1].style.display = 'block';
-    dots[slideIndex - 1].classList.add('active');
+    dots[slideIndex - 1].classList.add('slider-dot__active');
 }
 
 function plusSlides(n) {
@@ -45,6 +45,7 @@ dotsArea.onclick = function (e) {
 setInterval(function() {
     plusSlides(1);
 }, 5000);
+
 
 
 

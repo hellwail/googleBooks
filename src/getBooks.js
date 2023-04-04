@@ -4,17 +4,18 @@ const apiKey = "AIzaSyD5olFns5h9FLIMdSEF5iZDIkDVxAEjz4I";
 const output = document.querySelector(".products-container");
 const loadBtn = document.querySelector(".load-btn__container");
 const genre = document.querySelectorAll(".book-genres__link");
-
+let cartCount = 0;
 
 genre.forEach(item =>{
     item.addEventListener('click', getBooks);
 })
 genre.forEach(link => {
     link.addEventListener('click', () => {
-      genre.forEach(link => link.classList.remove('active-link'));
-      link.classList.add('active-link');
+      genre.forEach(link => link.classList.remove('book-genres__active'));
+      link.classList.add('book-genres__active');
     });
   });
+  
 
 function getBooks(event){
     let startIndex = 0; 
@@ -27,20 +28,37 @@ function getBooks(event){
             })
             .then (data => {
                 data.items.forEach (book => {
-                    const bookTemplate = `<div class="product-item">
-                        <div class="product-img">
-                            <img src=${book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "img/placeholder.png"} class="book-img" alt="book">
+                    const bookTemplate = `<div class="product">
+                        <div class="product-img__container">
+                            <img src=${book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "img/placeholder.png"} class="product-img" alt="book">
                         </div>
-                        <div class ="product-decription">
-                            <p class="img-description author">${book.volumeInfo.authors ? book.volumeInfo.authors : 'Unknown Author'}</p>
-                            <p class="img-description books-title">${book.volumeInfo.title ? book.volumeInfo.title : 'Unknown Book Name'}</p>
-                            ${book.volumeInfo.averageRating ? `<p class="img-description about-book rating">${getStars(book.volumeInfo.averageRating)}</p>` : ''}
-                             <p class="img-description about-book truncate-3">${book.volumeInfo.description ? book.volumeInfo.description : 'No Description Available'}</p>
-                              ${book.volumeInfo.price ? `<p class="img-description price">${book.volumeInfo.price}</p>`: ''}
-                            <button class="product-btn">Buy now</button>
+                        <div class ="product-description__container">
+                            <p class="product-img__description author">${book.volumeInfo.authors ? book.volumeInfo.authors : 'Unknown Author'}</p>
+                            <p class="product-img__description product-title">${book.volumeInfo.title ? book.volumeInfo.title : 'Unknown Book Name'}</p>
+                            ${book.volumeInfo.averageRating ? `<p class="product-img__description about-book rating">${getStars(book.volumeInfo.averageRating)}</p>` : ''}
+                             <p class="product-img__description about-book truncate">${book.volumeInfo.description ? book.volumeInfo.description : 'No Description Available'}</p>
+                            ${book.volumeInfo.price ? `<p class="product-img__description product-price">${book.volumeInfo.price}</p>`: ''}
+                            <button class="product-btn buy-btn" id="s">Buy now</button>
                         </div>
                     </div>`;
                     output.innerHTML += bookTemplate;
+
+                    // bag tracker function
+                    function bagCount(){
+                        const buyBtn = document.querySelectorAll('.buy-btn');
+                        const cartCountElem = document.getElementById('cart-count');
+                        const tracker = document.getElementById('cart-count');
+                        
+                        buyBtn.forEach((elem)=>{
+                        elem.addEventListener("click", () => {
+                            if (cartCount == 0){
+                            tracker.classList.add('active-bag');}
+                            cartCount++;
+                            cartCountElem.textContent = cartCount;
+                          });
+                        });
+                        }
+                        bagCount();
                 });
             });
     };
@@ -52,29 +70,49 @@ function getBooks(event){
         .then(data => {
             output.innerHTML = '';
             data.items.forEach(book => {
-                const bookTemplate = `<div class="product-item">
-                    <div class="product-img">
-                        <img src=${book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "img/placeholder.png"} class="book-img" alt="book">
-                    </div>
-                    <div class ="product-decription">
-                    <p class="img-description author">${book.volumeInfo.authors ? book.volumeInfo.authors : 'Unknown Author'}</p>
-                    <p class="img-description books-title">${book.volumeInfo.title ? book.volumeInfo.title : 'Unknown Book Name'}</p>
-                    ${book.volumeInfo.averageRating ? `<p class="img-description about-book rating">${getStars(book.volumeInfo.averageRating)}</p>` : ''}
-                    <p class="img-description about-book truncate-3">${book.volumeInfo.description ? book.volumeInfo.description : 'No Description Available'}</p>
-                    ${book.volumeInfo.price ? `<p class="img-description price">${book.volumeInfo.price}</p>`: ''}
-                        <button class="product-btn">Buy now</button>
-                    </div>
-                </div>`;
+                const bookTemplate = `<div class="product">
+                <div class="product-img__container">
+                    <img src=${book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "img/placeholder.png"} class="product-img" alt="book">
+                </div>
+                <div class ="product-description__container">
+                    <p class="product-img__description author">${book.volumeInfo.authors ? book.volumeInfo.authors : 'Unknown Author'}</p>
+                    <p class="product-img__description product-title">${book.volumeInfo.title ? book.volumeInfo.title : 'Unknown Book Name'}</p>
+                    ${book.volumeInfo.averageRating ? `<p class="product-img__description about-book rating">${getStars(book.volumeInfo.averageRating)}</p>` : ''}
+                     <p class="product-img__description about-book truncate">${book.volumeInfo.description ? book.volumeInfo.description : 'No Description Available'}</p>
+                    ${book.volumeInfo.price ? `<p class="product-img__description product-price">${book.volumeInfo.price}</p>`: ''}
+                    <button class="product-btn buy-btn" id = "s">Buy now</button>
+                </div>
+            </div>`;
                 output.innerHTML += bookTemplate;
+
+                // bag tracker function
+                function bagCount(){
+                    const buyBtn = document.querySelectorAll('.buy-btn');
+                    const cartCountElem = document.getElementById('cart-count');
+                    const tracker = document.getElementById('cart-count');
+                    
+                    buyBtn.forEach((elem)=>{
+                    elem.addEventListener("click", () => {
+                        if (cartCount == 0){
+                        tracker.classList.add('active-bag');}
+                        cartCount++;
+                        cartCountElem.textContent = cartCount;
+                      });
+                    });
+                    }
+                    bagCount();
             });
             loadBtn.addEventListener('click', loadMore);
             });
+            
         };
 
         window.addEventListener('load', () => {
-            document.querySelector('.active-link').click()  
+            document.querySelector('.book-genres__active').click()  
             });
 
+                
+            
             
 
 export {getBooks};
