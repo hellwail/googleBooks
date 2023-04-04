@@ -1,42 +1,85 @@
+import{getStars} from './starsRating.js';
+
 const apiKey = "AIzaSyD5olFns5h9FLIMdSEF5iZDIkDVxAEjz4I";
 const output = document.querySelector(".products-container");
-const load = document.querySelector(".load-btn");
+const loadBtn = document.querySelector(".load-btn__container");
 const genre = document.querySelectorAll(".book-genres__link");
+
 
 genre.forEach(item =>{
     item.addEventListener('click', getBooks);
 })
-
+genre.forEach(link => {
+    link.addEventListener('click', () => {
+      genre.forEach(link => link.classList.remove('active-link'));
+      link.classList.add('active-link');
+    });
+  });
 
 function getBooks(event){
-    fetch(`https://www.googleapis.com/books/v1/volumes?q="subject:${event.target.innerText}"&key=${apiKey}&printType=books&startIndex=0&maxResults=6&langRestrict=en`)
-    .then(response => {
-        return response.json()
-    })
-    .then (data => {
-        output.innerHTML = ''
-        data.items.forEach (book => {
-            const bookTemplate = `
-            <div class="product-item">
-            <div class="product-img">
-            <img src = ${book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "img/2.png"} class = "book-img" alt="book">
-            </div>
-            <div class ="product-decription">
-            <p class="img-description author">${book.volumeInfo.authors}</p>
-            <p class="img-description books-title">${book.volumeInfo.title}</p>
-            <p class="img-description about-book truncate-3">${book.volumeInfo.description}</p>
-            <p class="img-description price">${book.volumeInfo.price}</p>
-            <button class="product-btn">Buy now</button>
-            </div>
-            `;
-            output.innerHTML += bookTemplate;
-        })
-    })
-}
+    let startIndex = 0; 
+    const limit = 6; 
+    const loadMore = () => { 
+        startIndex += limit; 
+        fetch(`https://www.googleapis.com/books/v1/volumes?q="subject:${event.target.innerText}"&key=${apiKey}&printType=books&startIndex=${startIndex}&maxResults=${limit}&langRestrict=en`)
+            .then(response => {
+                return response.json()
+            })
+            .then (data => {
+                data.items.forEach (book => {
+                    const bookTemplate = `<div class="product-item">
+                        <div class="product-img">
+                            <img src=${book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "img/placeholder.png"} class="book-img" alt="book">
+                        </div>
+                        <div class ="product-decription">
+                            <p class="img-description author">${book.volumeInfo.authors ? book.volumeInfo.authors : 'Unknown Author'}</p>
+                            <p class="img-description books-title">${book.volumeInfo.title ? book.volumeInfo.title : 'Unknown Book Name'}</p>
+                            ${book.volumeInfo.averageRating ? `<p class="img-description about-book rating">${getStars(book.volumeInfo.averageRating)}</p>` : ''}
+                             <p class="img-description about-book truncate-3">${book.volumeInfo.description ? book.volumeInfo.description : 'No Description Available'}</p>
+                              ${book.volumeInfo.price ? `<p class="img-description price">${book.volumeInfo.price}</p>`: ''}
+                            <button class="product-btn">Buy now</button>
+                        </div>
+                    </div>`;
+                    output.innerHTML += bookTemplate;
+                });
+            });
+    };
 
-load.addEventListener('click', getBooks);
+    fetch(`https://www.googleapis.com/books/v1/volumes?q="subject:${event.target.innerText}"&key=${apiKey}&printType=books&startIndex=${startIndex}&maxResults=${limit}&langRestrict=en`)
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            output.innerHTML = '';
+            data.items.forEach(book => {
+                const bookTemplate = `<div class="product-item">
+                    <div class="product-img">
+                        <img src=${book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "img/placeholder.png"} class="book-img" alt="book">
+                    </div>
+                    <div class ="product-decription">
+                    <p class="img-description author">${book.volumeInfo.authors ? book.volumeInfo.authors : 'Unknown Author'}</p>
+                    <p class="img-description books-title">${book.volumeInfo.title ? book.volumeInfo.title : 'Unknown Book Name'}</p>
+                    ${book.volumeInfo.averageRating ? `<p class="img-description about-book rating">${getStars(book.volumeInfo.averageRating)}</p>` : ''}
+                    <p class="img-description about-book truncate-3">${book.volumeInfo.description ? book.volumeInfo.description : 'No Description Available'}</p>
+                    ${book.volumeInfo.price ? `<p class="img-description price">${book.volumeInfo.price}</p>`: ''}
+                        <button class="product-btn">Buy now</button>
+                    </div>
+                </div>`;
+                output.innerHTML += bookTemplate;
+            });
+            loadBtn.addEventListener('click', loadMore);
+            });
+        };
+
+        window.addEventListener('load', () => {
+            document.querySelector('.active-link').click()  
+            });
+
+            
 
 export {getBooks};
+
+
 
   
 

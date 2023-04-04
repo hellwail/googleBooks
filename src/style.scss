@@ -213,6 +213,15 @@ body{
     margin-left: 90px;
 }
 
+.active-link{
+    color: #000;
+    list-style:disc;
+    font-size: 12px;
+    font-weight: bold;
+    &::marker {
+        color: #756AD3;}
+}
+
 .truncate-3 {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -220,3 +229,7 @@ body{
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
   }
+
+  
+
+  
