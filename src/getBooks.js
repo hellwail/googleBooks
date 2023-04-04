@@ -43,8 +43,8 @@ function getBooks(event){
                     </div>`;
                     output.innerHTML += bookTemplate;
 
-                    // bag tracker function
-                    function bagCount(){
+                    // basket tracker function
+                    function basketCounter(){
                         const buyBtn = document.querySelectorAll('.buy-btn');
                         const cartCountElem = document.getElementById('cart-count');
                         const tracker = document.getElementById('cart-count');
@@ -58,7 +58,7 @@ function getBooks(event){
                           });
                         });
                         }
-                        bagCount();
+                        basketCounter();
                 });
             });
     };
@@ -85,8 +85,8 @@ function getBooks(event){
             </div>`;
                 output.innerHTML += bookTemplate;
 
-                // bag tracker function
-                function bagCount(){
+                // basket tracker function
+                function basketCounter(){
                     const buyBtn = document.querySelectorAll('.buy-btn');
                     const cartCountElem = document.getElementById('cart-count');
                     const tracker = document.getElementById('cart-count');
@@ -100,7 +100,7 @@ function getBooks(event){
                       });
                     });
                     }
-                    bagCount();
+                    basketCounter();
             });
             loadBtn.addEventListener('click', loadMore);
             });
