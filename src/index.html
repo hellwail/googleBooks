@@ -8,7 +8,7 @@
      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <title>GoogleBooks</title>
 </head>
-<body>
+<body class="body">
     <header class="header">
         <div class="header-container">
             <div class="header-logo">
@@ -16,7 +16,7 @@
                     Bookshop
                 </p></a>
             </div>
-            <nav>
+            <nav class="nav">
                 <ul class="header-navigation">
                     <li class="header-navigation__link"><a href="#">Books</a></li>
                     <li class="header-navigation__link"><a href="#">Audiobooks</a></li>
@@ -25,26 +25,25 @@
                 </ul>
             </nav>
             <div class="header-icons">
-                <a href="#"><img src="img/header-icons/user.svg" alt="user"></a>
-                <a href="#"><img src="img/header-icons/search.svg" alt="search"></a>
-                <a href="#" class ="shop-bag"><img src="img/header-icons/shop bag.svg"  id="shop-bag" alt="shop bag"><span class="cart-count" id="cart-count"></span></a>
+                <a href="#"><img src="img/header-icons/user.svg" class="header-icons__item" alt="user"></a>
+                <a href="#"><img src="img/header-icons/search.svg" class="header-icons__item" alt="search"></a>
+                <a href="#" class ="header-icon__bag"><img src="img/header-icons/shop bag.svg" class="header-icons__item" id="shop-bag" alt="shop bag"><span class="cart-count" id="cart-count"></span></a>
             </div>
         </div>
     </header>
     <main>
         <section class="slider-section">
             <div class="slider-container">
-
-                <img src="img/slider-images/banner 2.png" alt="banner1" class="slider banner2">
+                <img src="img/slider-images/banner.png" alt="banner1" class="slider banner1">
                 <img src="img/slider-images/banner 3.png" alt="banner2" class="slider banner2"> 
                 <img src="img/slider-images/banner 2.png" alt="banner3" class="slider banner3">
 
                 <div class="promo-container">
                     <div class="first-promo">
-                        <img src="img/promo-cards/promo 1.png" alt="1">
+                        <img src="img/promo-cards/promo 1.png" class="first-promo__img" alt="1">
                     </div>
                     <div class="second-promo">
-                        <img src="img/promo-cards/promo 2.png" alt="2">
+                        <img src="img/promo-cards/promo 2.png" class="second-promo__img" alt="2">
                     </div>
                 </div>
             </div>
@@ -55,31 +54,31 @@
                 <li class="slider-dots__list"><a href="javascript:"><div class="slider-dot btn"></div></a></li>
            </div>
         </section>
-        <section class="books-section">
-            <aside class="book-genres">
-                <ul class="book-genres__list">
-                    <li class="book-genres__link book-genres__active">Architecture</li>                
-                    <li class="book-genres__link">Art&Fashion</li>
-                    <li class="book-genres__link">Biography</li>
-                    <li class="book-genres__link">Business</li>
-                    <li class="book-genres__link">Childrens</li>
-                    <li class="book-genres__link">Crafts&Hobbies</li>
-                    <li class="book-genres__link">Fiction&Poetry</li>
-                    <li class="book-genres__link">Film, TV&Drama</li>
-                    <li class="book-genres__link">Food&Drink</li> 
-                    <li class="book-genres__link">Health&Wellbeing</li>
-                    <li class="book-genres__link">History&Politics</li>
-                    <li class="book-genres__link">Humor</li>
-                    <li class="book-genres__link">Poetry</li>
-                    <li class="book-genres__link">Psychology</li>
-                    <li class="book-genres__link">Science</li>
-                    <li class="book-genres__link">Technology</li> 
-                    <li class="book-genres__link">Travel&Maps</li>                 
+        <section class="product-section">
+            <aside class="product-genres">
+                <ul class="product-genres__list">
+                    <li class="product-genres__link product-genres__active">Architecture</li>                
+                    <li class="product-genres__link">Art&Fashion</li>
+                    <li class="product-genres__link">Biography</li>
+                    <li class="product-genres__link">Business</li>
+                    <li class="product-genres__link">Childrens</li>
+                    <li class="product-genres__link">Crafts&Hobbies</li>
+                    <li class="product-genres__link">Fiction&Poetry</li>
+                    <li class="product-genres__link">Film, TV&Drama</li>
+                    <li class="product-genres__link">Food&Drink</li> 
+                    <li class="product-genres__link">Health&Wellbeing</li>
+                    <li class="product-genres__link">History&Politics</li>
+                    <li class="product-genres__link">Humor</li>
+                    <li class="product-genres__link">Poetry</li>
+                    <li class="product-genres__link">Psychology</li>
+                    <li class="product-genres__link">Science</li>
+                    <li class="product-genres__link">Technology</li> 
+                    <li class="product-genres__link">Travel&Maps</li>                 
                 </ul>
             </aside>
             
             <div class="products-container">
-            
+                
             </div>
         </section>
         <div class="load-btn__container">

@@ -1,0 +1,265 @@
+@media screen and (max-width: 1280px){
+    .body{
+        width: 1000px;
+    }
+    .header{
+        height: 80px;
+        &-container{
+            max-width: 970px;
+        }
+    }
+  
+    .slider-section{
+        width: 970px;
+        height: 550px;
+    }
+
+    .slider{
+        width: 970px;
+        height: 500px;
+    }
+
+    .first-promo{
+        left: 870px;
+        top: 5px;
+        height: 210px;
+    }
+
+    .second-promo{
+        left: 880px;
+        top: 280px;
+        height: 240px;
+    }
+
+    .product-genres{
+        margin-top: 20px;
+        height: 670px;
+        
+        &__link{
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 35px;
+        }
+    }
+
+    .products-container{
+        margin-top: 30px;
+        right: 10px;
+    }
+
+    .product{
+        width: 290px;
+        &:nth-child(2n){
+            margin-left: 30px;
+        }
+        &-img{
+            width: 150px;
+            height: 200px;
+        }
+        &-description__container{
+            flex-grow: 1;
+            padding-left: 10px;
+            height: 220px;
+            width: 100px;
+        }
+        &-btn{
+            width: 100px;
+            height: 35px;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .body{
+        width: 800px;
+    }
+    .header{
+        height: 55px;
+        &-container{
+            max-width: 700px;
+            height: 60px;
+        }
+        &-logo__p{
+            font-size: 16px;
+        }
+        &-navigation__link{
+            font-size: 8px;
+        }
+    }
+
+    .header-icons__item{
+        width: 12px;
+    }
+  
+    .slider-section{
+        width: 700px;
+        height: 400px;
+    }
+    
+    .slider{
+        width: 700px;
+        height: 300px;
+    }
+
+    .first-promo{
+        display: none;
+     }
+ 
+     .second-promo{
+         display: none;
+     }
+
+    .product-genres{
+        position: relative;
+        margin-top: 20px;
+        height: 670px;
+        width: 200px;
+        left: 65px;
+        &__link{
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 35px;
+        }
+    }
+
+    .products-container{
+        width: 550px;
+        margin-top: 30px;
+        left: 40px;
+    }
+
+    .product{
+        width: 250px;
+        &:nth-child(2n){
+            margin-left: 1px;
+        }
+        &-img{
+            width: 120px;
+            height: 180px;
+        }
+        &-description__container{
+            flex-grow: 1;
+            padding-left: 10px;
+            height: 220px;
+            width: 100px;
+        }
+        &-btn{
+            width: 85px;
+            height: 35px;
+        }
+    }
+    
+}
+
+
+
+@media screen and (max-width: 768px){
+    .body{
+        width: 400px;
+    }
+
+    .nav{
+        display: none;
+    }
+
+    .header{
+        height: 55px;
+        &-container{
+            max-width: 350px;
+            height: 60px;
+        }
+    }
+
+    .slider-section{
+        width: 350px;
+        height: 250px;
+    }
+    
+    .slider{
+        width: 350px;
+        height: 200px;
+        &-dot{
+            width: 8px;
+            height: 8px;
+        }
+    }
+
+    .first-promo{
+       display: none;
+    }
+
+    .second-promo{
+        display: none;
+    }
+
+    .product-genres{
+        height: 670px;
+        width: 300px;
+        left: 25px;
+        &__active{
+            list-style:none;
+        }
+    }
+
+    .products-container{
+        margin-top: 30px;
+        left: 10px;
+    }
+
+    .product{
+        width: 290px;
+        &:nth-child(2n){
+            margin-left: 0px;
+        }
+    }
+}
+
+@media screen and (max-width: 480px){
+    .body{
+        width: 400px;
+    }
+
+    .header{
+        height: 55px;
+        &-container{
+            max-width: 360px;
+            height: 60px;
+        }
+    }
+
+    .slider-section{
+        width: 360px;
+        height: 250px;
+    }
+    
+    .slider{
+        width: 360px;
+        height: 220px;
+    }
+
+    .product-genres{
+        height: 670px;
+        width: 300px;
+        left: 20px;
+        &__link{
+            font-size: 10px;
+        }
+    }
+
+    .products-container{
+        margin-top: 30px;
+        left: 5px;
+    }
+
+    .product{
+        width: 290px;
+        margin-bottom: 10px;
+        &:nth-child(2n){
+            margin-left: 0px;
+        }
+        &-img{
+            width: 120px;
+            height: 170px;
+        }
+    }
+}

@@ -1,4 +1,4 @@
-import './style.scss';
+import '../styles/style.scss';
 import{getBooks} from './getBooks.js';
 
 
