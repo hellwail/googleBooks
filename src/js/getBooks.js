@@ -30,7 +30,7 @@ function getBooks(event){
                 data.items.forEach (book => {
                     const bookTemplate = `<div class="product">
                         <div class="product-img__container">
-                            <img src=${book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "/src/img/placeholder.png"} class="product-img" alt="book">
+                            <img src=${book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "./src/img/placeholders/placeholder.png"} class="product-img" alt="book">
                         </div>
                         <div class ="product-description__container">
                             <p class="product-description author truncate">${book.volumeInfo.authors ? book.volumeInfo.authors : 'Unknown Author'}</p>
@@ -72,7 +72,7 @@ function getBooks(event){
             data.items.forEach(book => {
                 const bookTemplate = `<div class="product">
                 <div class="product-img__container">
-                    <img src=${book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "/src/img/placeholder.png"} class="product-img" alt="book">
+                    <img src=${book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "./src/img/placeholders/placeholder.png"} class="product-img" alt="book">
                 </div>
                 <div class ="product-description__container">
                     <p class="product-description author truncate">${book.volumeInfo.authors ? book.volumeInfo.authors : 'Unknown Author'}</p>
